@@ -1,0 +1,32 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: cambio-service
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/cambio_service?useTimeZone=true&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  flyway:
+    url: jdbc:mysql://localhost:3306/
+    user: root
+    password: 12345678
+    schemas:
+      - cambio_service
+springdoc:
+  api-docs:
+    path: cambio-service/v3/api-docs
+  show-actuator: true

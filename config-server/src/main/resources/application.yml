@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: lucas-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lucasgoncalvesbt/lucas-config-server
+          search-paths:
+            - 'greeting-service*'
+          username: lucasgoncalvesbt
+          password: 0718760206003005
